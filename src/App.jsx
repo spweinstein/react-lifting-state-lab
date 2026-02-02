@@ -23,7 +23,6 @@ const App = () => {
     { name: "Swiss Cheese", color: "#F1E1A8" },
   ];
 
-  const [ingredientList, setIngredientList] = useState(availableIngredients);
   const [burgerStack, setBurgerStack] = useState([]);
 
   const addIngredient = (ingredient) => {
@@ -43,7 +42,7 @@ const App = () => {
       <h1>Burger Stacker</h1>
       <section>
         <IngredientList
-          ingredients={ingredientList}
+          ingredients={availableIngredients}
           addIngredient={addIngredient}
         />
         <BurgerStack

@@ -23,14 +23,14 @@ const App = () => {
     { name: "Swiss Cheese", color: "#F1E1A8" },
   ];
 
-  const [burgerStack, setBurgerStack] = useState([]);
+  const [stack, setStack] = useState([]);
 
   const addToBurger = (ingredient) => {
-    setBurgerStack((prevBurgerStack) => [...prevBurgerStack, ingredient]);
+    setStack((prevBurgerStack) => [...prevBurgerStack, ingredient]);
   };
 
   const removeFromBurger = (ingredient) => {
-    setBurgerStack((prevBurgerStack) =>
+    setStack((prevBurgerStack) =>
       prevBurgerStack.filter(
         (otherIngredient) => otherIngredient.name != ingredient.name,
       ),
@@ -45,10 +45,7 @@ const App = () => {
           ingredients={availableIngredients}
           addToBurger={addToBurger}
         />
-        <BurgerStack
-          ingredients={burgerStack}
-          removeFromBurger={removeFromBurger}
-        />
+        <BurgerStack ingredients={stack} removeFromBurger={removeFromBurger} />
         {/* List & Stack components */}
       </section>
     </main>

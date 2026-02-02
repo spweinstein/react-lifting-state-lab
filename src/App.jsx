@@ -25,11 +25,11 @@ const App = () => {
 
   const [burgerStack, setBurgerStack] = useState([]);
 
-  const addIngredient = (ingredient) => {
+  const addToBurger = (ingredient) => {
     setBurgerStack((prevBurgerStack) => [...prevBurgerStack, ingredient]);
   };
 
-  const removeIngredient = (ingredient) => {
+  const removeFromBurger = (ingredient) => {
     setBurgerStack((prevBurgerStack) =>
       prevBurgerStack.filter(
         (otherIngredient) => otherIngredient.name != ingredient.name,
@@ -43,11 +43,11 @@ const App = () => {
       <section>
         <IngredientList
           ingredients={availableIngredients}
-          addIngredient={addIngredient}
+          addToBurger={addToBurger}
         />
         <BurgerStack
           ingredients={burgerStack}
-          removeIngredient={removeIngredient}
+          removeFromBurger={removeFromBurger}
         />
         {/* List & Stack components */}
       </section>

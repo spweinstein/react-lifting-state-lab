@@ -8,6 +8,7 @@ const IngredientList = (props) => {
         return (
           <li style={{ backgroundColor: ingredient.color }} key={index}>
             {ingredient.name}
+            <button onClick={() => props.addIngredient(ingredient)}>+</button>
           </li>
         );
       })}
